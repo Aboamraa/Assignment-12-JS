@@ -134,6 +134,8 @@ function displayTodayResult(result) {
     mainScreen.style.backgroundImage = "url(./images/Scattered-Clouds.jpg)";
   } else if (result.condition == "Patchy rain nearby") {
     mainScreen.style.backgroundImage = "url(./images/Overcast-Clouds.jpg)";
+  } else if (result.condition == "Thundery outbreaks in nearby") {
+    mainScreen.style.backgroundImage = "url(./images/Thundery-outbreaks.jpg)";
   }
 }
 
