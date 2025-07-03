@@ -119,6 +119,7 @@ function displayTodayResult(result) {
   fields[3].innerText = result.windDirection;
   fields[4].innerText = result.vis;
   fields[5].innerText = result.uv;
+  console.log("we are hereee", result.condition);
 
   //the main backgroundImage
   const mainScreen = document.querySelector("main");
@@ -136,6 +137,13 @@ function displayTodayResult(result) {
     mainScreen.style.backgroundImage = "url(./images/Overcast-Clouds.jpg)";
   } else if (result.condition == "Thundery outbreaks in nearby") {
     mainScreen.style.backgroundImage = "url(./images/Thundery-outbreaks.jpg)";
+  } else if (
+    result.condition == "Light rain shower" ||
+    result.condition == "Light rain"
+  ) {
+    mainScreen.style.backgroundImage = "url(./images/light-rain.jpeg)";
+  } else if (result.condition == "Sunny") {
+    mainScreen.style.backgroundImage = "url(./images/clear-sky.jpg)";
   }
 }
 
