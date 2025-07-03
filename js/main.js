@@ -6,49 +6,13 @@ const selectorAll = (elementsSelector) =>
 const cityNameInput = id("cityNameInput");
 const searchBtn = id("searchBtn");
 // --------------------------------------------------------------
-// const resultMain = id("resultMain");
 const resultMain = selectorAll(".resultMain"); // *has city name and temp.
 
 const wetherDetails = selectorAll(".wetherDetails"); //* has 3 elements to be set [feelsLike, Humidity, smthelse]
 
-// const weatherIcon = selector(".weatherIcon");
 const conditionDetails = selectorAll(".conditionDetails"); //* has weather icon and condition
 
 const windData = selectorAll(".windData"); //* has 4 divs each has [icon,p[/span/]]
-// const createH4 = document.createElement("h4");
-
-// function api() {
-//   const baseUrl = "http://api.weatherstack.com/";
-
-//   const req = new XMLHttpRequest();
-//   if (!validateInput) alert("Invalid city name");
-//   req.open(
-//     "GET",
-//     (baseUrl += `current?access_key=a669fda8b3a246099b9210751253006q=${cityNameInput.value}`)
-//   );
-//   //req.send()
-
-//   req.addEventListener("load", function () {
-//     responseBody = JSON.parse(req.response);
-//     console.log("full response: ", responseBody);
-//     console.log("response location: ", responseBody.location);
-//     console.log("response current: ", responseBody.current);
-//     result = {
-//       countryName: responseBody.location.country,
-//       cityName: responseBody.location.name,
-//       lat: responseBody.location.lat,
-//       lon: responseBody.location.lon,
-//       temp: responseBody.current.temperature,
-//       weatherIcon: responseBody.current.weather_icons[0],
-//       weatherDesc: responseBody.current.weather_descriptions[0],
-//       feelsLike: responseBody.current.feelslike,
-//       humidity: responseBody.current.humidity,
-//     };
-//     console.log("created result: ", result);
-
-//     displayResult(result);
-//   });
-// }
 
 const secondaryCards = selectorAll(".secondary-card");
 
@@ -119,7 +83,6 @@ function displayTodayResult(result) {
   fields[3].innerText = result.windDirection;
   fields[4].innerText = result.vis;
   fields[5].innerText = result.uv;
-  console.log("we are hereee", result.condition);
 
   //the main backgroundImage
   const mainScreen = document.querySelector("main");
@@ -169,59 +132,6 @@ function displayNextDaysResult(dayResult, card) {
     dayResult.day.condition.icon
   );
 }
-function displayResult(result, weatherArrayPast) {
-  //* Condition start
-  conditionDetails.firstElementChild.setAttribute("src", result.conditionIcon); //img of the condition ##Done##
-
-  conditionDetails.lastElementChild.innerHTML = String(result.condition); //img of the condition ##Done##
-  //* Condition end
-
-  resultMain.firstElementChild.innerText = result.cityName; //* city-name => h4 ##Done##
-
-  resultMain.lastElementChild.firstElementChild.innerText = result.temp + "°"; //* temp. => h4 => span ##Done##
-
-  let firstDetailsParagraph = wetherDetails.firstElementChild;
-  // let lastDetailsParagraph = resultDetails.lastElementChild; // <div id="windData">...</div>
-
-  firstDetailsParagraph.firstElementChild.innerText = result.feelsLike + "°C"; //##Done##
-  firstDetailsParagraph.nextElementSibling.firstElementChild.innerText = // -> humidity ##Done##
-    result.humidity + "%";
-
-  // lastDetailsParagraph.firstElementChild.innerText = result.lat + "°";
-  // lastDetailsParagraph.previousElementSibling.firstElementChild.innerText =
-  //   result.lon + "°";
-  const rows = windData.querySelectorAll(".rows span");
-  // rows[0].lastElementChild
-  console.log(rows);
-  rows[0].innerText = result.windSpeed; // windSpeed
-  rows[1].innerText = result.windDirection; // wind_dir
-  rows[2].innerText = result.vis; // visibility
-  rows[3].innerText = result.uv; // uv index
-}
-
-// As API but without a real request
-function demoAPI() {
-  //open connection [Get,endpoint]
-  //send the request
-
-  //*eventlistener -> [load]:
-  let result = {
-    countryName: "Egypt", //responseBody.location.country,
-    cityName: "Cairo", //responseBody.location.name,
-    lat: 30.0444, //responseBody.location.lat,
-    lon: 31.2357, //responseBody.location.lon,
-    temp: 31, //responseBody.current.temperature,
-    weatherIcon: "images/tempicons/snow.svg", //responseBody.current.weather_icons[0],
-    weatherDesc: "Sunny", //responseBody.current.weather_descriptions[0],
-    feelsLike: 33, //responseBody.current.feelslike,
-    humidity: 32, //responseBody.current.humidity,
-  };
-  displayResult(result);
-}
-
-function setMainBackground(weatherCondition) {}
-// api();
-// demoAPI();
 
 // For styling
 (function () {
