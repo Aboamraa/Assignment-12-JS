@@ -57,7 +57,7 @@ searchBtn.addEventListener("click", (e) => {
   api();
 });
 async function api() {
-  const baseUrl = "http://api.weatherapi.com";
+  const baseUrl = "https://api.weatherapi.com";
   const endPoint = `/v1/forecast.json?key=a669fda8b3a246099b9210751253006&q=${cityNameInput.value}&days=3&aqi=no&alerts=no`;
   if (!validateInput()) {
     alert("Please enter city name");
