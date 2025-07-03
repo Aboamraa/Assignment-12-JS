@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Amatic+SC:wght@400;700&family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Amatic+SC:wght@400;700&family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Righteous&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Google Fonts -->
+
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+
+    <main class="vh-100 d-flex flex-column">
+        <div class="logo d-flex">
+            <img src="images/tempicons/logo.svg" alt="site logo">
+            <h1 class="text-white fs-4 text-center pt-4 ps-3">Weather Apps</h1>
+        </div>
+
+        <section class="p-5">
+            <form action="#" class=" d-flex justify-content-around w-50 mx-auto">
+                <!-- <input type="search" name="country" placeholder="country" class="form-control mx-3"
+                    id="countryNameInput"> -->
+                <input type="search" name="city" placeholder="city" class="form-control mx-3" id="cityNameInput">
+                <button type="submit" class="btn btn-dark mx-4" id="searchBtn">Go</button>
+            </form>
+        </section>
+
+
+        <section class="result d-flex justify-content-center mt-5 pt-5 h-100">
+            <div class="container ">
+
+                <div class="row g-4 ">
+
+                    <div class="col-4">
+                        <div class="card main-card rounded-4 bg-black bg-opacity-50">
+                            <div class="card-body p-5  text-light d-flex ">
+
+                                <div class="left-side">
+                                    <div
+                                        class="top  mb-4  text-capitalize resultMain d-flex flex-column align-items-center">
+                                        <!-- result main class -->
+                                        <h4 class="">City Name</h4>
+                                        <h4 class="text-danger align-self-center"><span class="text-white">0°</span>C
+                                        </h4>
+                                    </div>
+                                    <div class="bottom wetherDetails text-white-50"> <!-- WetherDetails class -->
+                                        <p>Feels like: <span>0°C</span></p>
+                                        <p>Humidity: <span>0</span>%</p>
+                                        <!-- <p>Latitude: <span>0</span></p> TODO::should be replaced to something else -->
+                                        <div
+                                            class="d-flex justify-content-center mt-4 gap-2 windData text-white-50 fw-bold fs-7">
+                                            <!-- WindData class -->
+
+                                            <div class="wind-speed px-2 text-center">
+                                                <i class="fa-solid fa-wind"></i>
+                                                <p><span>0</span> KM/H</p>
+                                            </div>
+
+                                            <div class="wind-direction px-2 text-center">
+                                                <i class="fa-solid fa-location-arrow"></i>
+                                                <p><span>0</span></p>
+                                            </div>
+
+
+
+                                            <div class="visability px-2 text-center">
+                                                <i class="fa-solid fa-binoculars"></i>
+                                                <p> <Span>0</Span> KM</p>
+                                            </div>
+                                            <div class="uv-index px-4 text-center">
+
+                                                <i class="fa-solid fa-sun"></i>
+                                                <p> <span>0</span></p>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="right-side ms-auto  text-center conditionDetails"> <!-- conditionDetails -->
+                                    <!-- TODO::SVG or ICON -->
+                                    <img src="images/tempicons/sun.svg" class="svg mb-2 weatherIcon pe-3">
+
+                                    <h4 class="text-center pe-3">Sunny</h4>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card secondary-card rounded-4 bg-black bg-opacity-50">
+                            <div class="card-body p-5  text-light d-flex justify-content-between">
+                                <div class="main-details text-center">
+                                    <!-- <h4 class=" text-capitalize">City Name</h4> -->
+                                    <h4 class="text-danger  fs-3"><span class="text-white">30°</span>C</h4>
+                                    <h4 class="text-danger  fs-5 mb-4"><span class="text-white-50">20°</span>C</h4>
+
+                                    <p class="text-white-50 mb-0">Date: <span></span></p>
+                                    <!-- <p>Humidity: <span>0</span></p> -->
+                                </div>
+                                <div class="condition d-flex flex-column justify-content-evenly align-items-center">
+                                    <img src="images/tempicons/sun.svg" class="svg mb-2 weatherIcon  ">
+                                    <h4 class="text-center pe-3">Sunny</h4>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="card secondary-card rounded-4 bg-black bg-opacity-50">
+                            <div class="card-body p-5  text-light d-flex justify-content-between">
+                                <div class="main-details text-center">
+                                    <!-- <h4 class=" text-capitalize">City Name</h4> -->
+                                    <h4 class="text-danger  fs-3"><span class="text-white">30°</span>C</h4>
+                                    <h4 class="text-danger  fs-5 mb-4"><span class="text-white-50">20°</span>C</h4>
+
+                                    <p class="text-white-50 mb-0">Date: <span></span></p>
+                                    <!-- <p>Humidity: <span>0</span></p> -->
+                                </div>
+                                <div class="condition d-flex flex-column justify-content-evenly align-items-center">
+                                    <img src="images/tempicons/sun.svg" class="svg mb-2 weatherIcon pe-3">
+                                    <h4 class="text-center pe-3">Sunny</h4>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

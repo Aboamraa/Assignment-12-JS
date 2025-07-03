@@ -1,0 +1,75 @@
+/* General */
+a {
+  transition: 0.3s;
+  text-decoration-color: rgba(0, 0, 0, 0);
+}
+a:hover {
+  text-decoration-color: rgba(23, 162, 250, 1);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+nav a {
+  font-family: "Righteous", cursive;
+}
+
+.fs-7 {
+  font-size: 0.92rem;
+}
+
+/* General */
+
+main {
+  background-image: url("../images/broken-clouds.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.card {
+  backdrop-filter: blur(18px);
+}
+
+form button {
+  width: 220px;
+}
+section.result .card .svg {
+  width: 80px;
+  height: 80px;
+}
+
+.card .bottom {
+  p {
+    margin-bottom: 7px;
+  }
+}
+.logo {
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  width: 80px;
+  height: 80px;
+}
+
+.main-card {
+  /* height: 64%; */
+  overflow: hidden;
+  transition: all 0.5s 0.1s ease;
+  .windData {
+    opacity: 0;
+  }
+}
+.main-card:hover {
+  height: 100% !important;
+  .windData {
+    transition: opacity 0.1s;
+    opacity: 100%;
+  }
+}
+
+.weatherIcon {
+  width: 5%;
+}
