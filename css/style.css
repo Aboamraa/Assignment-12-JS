@@ -47,9 +47,7 @@ section.result .card .svg {
   }
 }
 .logo {
-  /* position: fixed;
-  top: 40px;
-  left: 40px; */
+
   width: 50px;
   height: 50px;
 }
@@ -74,10 +72,7 @@ section.result .card .svg {
   width: 5%;
 }
 
-/* form .form-control:focus{
-  box-shadow: ghostwhite;
-  border: 2px solid ghostwhite;
-} */
+
 
 input.form-control::placeholder {
   color: rgba(255, 255, 255, 0.6);
